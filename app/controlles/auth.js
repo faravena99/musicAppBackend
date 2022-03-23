@@ -17,7 +17,7 @@ const loginCtrl = async(req, res) => {
         const { email, password } = req.body
 
 
-        if (mockUser.email !== 'test@test.com') {
+        if (mockUser.email !== 'escalab@test.com') {
             res.status(404)
             res.send({ error: 'User not found' })
         }
