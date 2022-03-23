@@ -8,10 +8,10 @@ const loginCtrl = async(req, res) => {
     try {
 
         const mockUser = {
-            name: 'Leifer',
+            name: 'Felipe Aravena',
             email: 'test@test.com',
             password: '12345678',
-            avatar: 'https://i.imgur.com/0mZ4PUR.png'
+            avatar: 'https://i.imgur.com/a/dpvI0xl'
         }
 
         const { email, password } = req.body
