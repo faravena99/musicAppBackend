@@ -9,7 +9,7 @@ const loginCtrl = async(req, res) => {
 
         const mockUser = {
             name: 'Felipe Aravena',
-            email: 'test@test.com',
+            email: 'escalab@test.com',
             password: '12345678',
             avatar: 'https://i.imgur.com/a/dpvI0xl'
         }
