@@ -1,7 +1,6 @@
 const { httpError } = require('../helpers/handleError')
 const userModel = require('../models/users')
-const PORT = process.env.PORT || 3000
-const URL_PUBLIC = process.env.URL_PUBLIC || '/'
+
 const getItems = async(req, res) => {
     try {
         const listAll = [{
@@ -18,7 +17,7 @@ const getItems = async(req, res) => {
                     "start": 0,
                     "end": 333
                 },
-                "url": `${URL_PUBLIC}/track.mp3`
+                "url": `http://localhost:3000/track.mp3`
             },
             {
                 "_id": 2,
@@ -34,7 +33,7 @@ const getItems = async(req, res) => {
                     "start": 0,
                     "end": 333
                 },
-                "url": `${URL_PUBLIC}/track-1.mp3`
+                "url": `http://localhost:3000/track-1.mp3`
             },
             {
                 "_id": 3,
@@ -50,7 +49,7 @@ const getItems = async(req, res) => {
                     "start": 0,
                     "end": 333
                 },
-                "url": `${URL_PUBLIC}/track-2.mp3`
+                "url": `http://localhost:3000/track-2.mp3`
             },
             {
                 "_id": 4,
@@ -66,7 +65,7 @@ const getItems = async(req, res) => {
                     "start": 0,
                     "end": 333
                 },
-                "url": `${URL_PUBLIC}/track-4.mp3`
+                "url": `http://localhost:3000/track-4.mp3`
             },
             {
                 "_id": 5,
@@ -82,7 +81,7 @@ const getItems = async(req, res) => {
                     "start": 0,
                     "end": 333
                 },
-                "url": `${URL_PUBLIC}/track-3.mp3`
+                "url": `http://localhost:3000/track-3.mp3`
             },
             {
                 "_id": 6,
@@ -98,7 +97,7 @@ const getItems = async(req, res) => {
                     "start": 0,
                     "end": 333
                 },
-                "url": `${URL_PUBLIC}/track-5.mp3`
+                "url": `http://localhost:3000/track-5.mp3`
             },
             {
                 "_id": 7,
@@ -114,7 +113,7 @@ const getItems = async(req, res) => {
                     "start": 0,
                     "end": 333
                 },
-                "url": `${URL_PUBLIC}/track-6.mp3`
+                "url": `http://localhost:3000/track-6.mp3`
             },
             {
                 "_id": 8,
@@ -130,17 +129,13 @@ const getItems = async(req, res) => {
                     "start": 0,
                     "end": 333
                 },
-                "url": `${URL_PUBLIC}/track-7.mp3`
+                "url": `http://localhost:3000/track-7.mp3`
             }
         ]
         res.send({ data: listAll })
     } catch (e) {
         httpError(res, e)
     }
-}
-
-const getItem = (req, res) => {
-
 }
 
 const createItem = async(req, res) => {
@@ -158,12 +153,6 @@ const createItem = async(req, res) => {
 }
 
 
-const updateItem = (req, res) => {
 
-}
-
-const deleteItem = (req, res) => {
-
-}
 
 module.exports = { getItem, getItems, deleteItem, createItem, updateItem }
