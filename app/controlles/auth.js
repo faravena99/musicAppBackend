@@ -1,7 +1,5 @@
 const { httpError } = require('../helpers/handleError')
-const { encrypt, compare } = require('../helpers/handleBcrypt')
 const { tokenSign } = require('../helpers/generateToken')
-const userModel = require('../models/users')
 
 //TODO: Login!
 const loginCtrl = async(req, res) => {
@@ -24,8 +22,7 @@ const loginCtrl = async(req, res) => {
 
         const checkPassword = (mockUser.password === password)
 
-        //TODO JWT 👉
-        const tokenSession = await tokenSign(mockUser) //TODO: 2d2d2d2d2d2d2
+        const tokenSession = await tokenSign(mockUser)
 
         if (checkPassword) { //TODO Contraseña es correcta!
             res.send({
@@ -48,26 +45,8 @@ const loginCtrl = async(req, res) => {
     }
 }
 
-//TODO: Registramos usuario!
-const registerCtrl = async(req, res) => {
-    try {
-        //TODO: Datos que envias desde el front (postman)
-        const { email, password, name } = req.body
-
-        const passwordHash = await encrypt(password) //TODO: (123456)<--- Encriptando!!
-        const registerUser = await userModel.create({
-            email,
-            name,
-            password: passwordHash
-        })
-
-        res.send({ data: registerUser })
-
-    } catch (e) {
-        httpError(res, e)
-    }
-}
 
 
 
-module.exports = { loginCtrl, registerCtrl }
+
+module.exports = { loginCtrl }
